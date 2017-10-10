@@ -21,7 +21,6 @@ cp dist/quill.core.css dist/quill.bubble.css dist/quill.snow.css dist/quill.js d
 cd .release
 
 
-
 mkdir quill/examples
 mv _site/standalone/bubble/index.html quill/examples/bubble.html
 mv _site/standalone/snow/index.html quill/examples/snow.html
@@ -31,3 +30,8 @@ find quill/examples -type f -exec sed -i "" 's/href="\/\//href="https:\/\//g' {}
 find quill/examples -type f -exec sed -i "" 's/src="\/\//src="https:\/\//g' {} \;
 
 tar -czf quill.tar.gz quill
+
+cd ..
+git tag v$VERSION -m "Version $VERSION"
+git push origin v$VERSION
+git push
