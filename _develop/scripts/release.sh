@@ -1,7 +1,6 @@
 #!/bin/bash
 
-VERSION="1.3.3.5"
-
+VERSION="1.3.3.7"
 
 if [ -z "$VERSION" ]; then
   echo "Version required."
@@ -10,7 +9,7 @@ else
   echo "Releasing $VERSION"
 fi
 
-rm -r release
+rm -r .release
 rm -r dist
 mkdir release
 mkdir release/quill
